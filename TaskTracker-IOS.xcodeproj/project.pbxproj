@@ -28,7 +28,7 @@
 /* Begin PBXFileReference section */
 		6243B9B670C017CD37CB58B3 /* Pods_TaskTracker_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskTracker_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6275FB4464B80125EA691A06 /* Pods-TaskTracker-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskTracker-IOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaskTracker-IOS/Pods-TaskTracker-IOS.release.xcconfig"; sourceTree = "<group>"; };
-		8184D77F210BEB1400199607 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../../../Downloads/TaskTracker-IOS-master/TaskTracker-IOS/Main.storyboard"; sourceTree = "<group>"; };
+		8184D77F210BEB1400199607 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "TaskTracker-IOS/Main.storyboard"; sourceTree = SOURCE_ROOT; };
 		819BCBE02108C0270061E059 /* CreateTodoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTodoController.swift; sourceTree = "<group>"; };
 		819BCBE12108C0270061E059 /* ProjectsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsController.swift; sourceTree = "<group>"; };
 		819BCBE22108C0270061E059 /* TodoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
