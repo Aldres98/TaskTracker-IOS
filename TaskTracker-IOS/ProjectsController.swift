@@ -25,11 +25,17 @@ class ProjectsController: UITableViewController, SwitchDelegate{
         UpdateProjects()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+
+    }
+    
+    
     func UpdateProjects(){
         Alamofire.request("https://radiant-island-23944.herokuapp.com/projects.json").responseJSON(completionHandler: {
             response in
             switch response.result{
             case .success:
+                self.projects.removeAll()
                 self.projects = []
                 let json = JSON(response.result.value!)
                 for (_,subJson):(String, JSON) in json {
@@ -54,15 +60,13 @@ class ProjectsController: UITableViewController, SwitchDelegate{
                 print( "Error" )
             }
         })
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         //[self, setNeedsStatusBarAppearanceUpdate] as [Any];
-        
         UpdateProjects()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -105,11 +109,15 @@ class ProjectsController: UITableViewController, SwitchDelegate{
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! TodoCell
-        
         cell.todoText!.text = self.projects[indexPath.section].todos[indexPath.row].text
-        if self.projects[indexPath.section].todos[indexPath.row].isCompleted{
+        
+        
+        if self.projects[indexPath.section].todos[indexPath.row].isCompleted == true{
             (cell.checkBox as! M13Checkbox).setCheckState(M13Checkbox.CheckState.checked, animated: false)
+        } else {
+            (cell.checkBox as! M13Checkbox).setCheckState(M13Checkbox.CheckState.unchecked, animated: false)
         }
+        
         labelStrikeThrough(cell: cell)
         
         return cell
@@ -118,9 +126,9 @@ class ProjectsController: UITableViewController, SwitchDelegate{
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! TodoCell
         (cell.checkBox as! M13Checkbox).toggleCheckState()
-        
         labelStrikeThrough(cell: cell);
         
+
         Alamofire.request("https://radiant-island-23944.herokuapp.com/todo/" +
             String(self.projects[indexPath.section].todos[indexPath.row].id), method: .put)
         
@@ -137,6 +145,7 @@ class ProjectsController: UITableViewController, SwitchDelegate{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        UpdateProjects()
         var projectNames:[String] = []
         for project in self.projects{ projectNames.append(project.title) };
         

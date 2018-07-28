@@ -76,7 +76,7 @@
                                                 <userDefinedRuntimeAttribute type="color" keyPath="secondaryCheckmarkTintColor">
                                                     <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </userDefinedRuntimeAttribute>
-                                                <userDefinedRuntimeAttribute type="string" keyPath="_IBCheckState" value="Ckecked"/>
+                                                <userDefinedRuntimeAttribute type="string" keyPath="_IBCheckState" value="Checked"/>
                                                 <userDefinedRuntimeAttribute type="string" keyPath="_IBStateChangeAnimation" value="Fill"/>
                                                 <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                     <real key="value" value="0.0"/>

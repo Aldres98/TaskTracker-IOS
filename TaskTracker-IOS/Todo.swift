@@ -14,20 +14,20 @@ class Todo{
     var isCompleted:Bool
     
     init(id: Int, text: String, isCompleted: Bool){
-        self.id = id;
-        self.text = text;
-        self.isCompleted = isCompleted;
+        self.id = id
+        self.text = text
+        self.isCompleted = isCompleted
     }
     
     init(){
-        self.id = -1;
+        self.id = -1
         self.text  = "Uknown"
-        self.isCompleted = false;
+        self.isCompleted = false
     }
     
     init(json: JSON){
-        self.id = json["id"].int!;
-        self.text = json["text"].string!;
-        self.isCompleted = json["isCompleted"].bool!;
+        self.id = json["id"].int!
+        self.text = json["text"].string!
+        self.isCompleted = json["isCompleted"].bool!
     }
 }

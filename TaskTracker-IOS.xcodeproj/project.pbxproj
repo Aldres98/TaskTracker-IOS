@@ -8,11 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3A92794FC0B2A524DE4B4A15 /* Pods_TaskTracker_IOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6243B9B670C017CD37CB58B3 /* Pods_TaskTracker_IOS.framework */; };
+		8184D780210BEB1400199607 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8184D77F210BEB1400199607 /* Main.storyboard */; };
 		819BCBE82108C0280061E059 /* CreateTodoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BCBE02108C0270061E059 /* CreateTodoController.swift */; };
 		819BCBE92108C0280061E059 /* ProjectsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BCBE12108C0270061E059 /* ProjectsController.swift */; };
 		819BCBEA2108C0280061E059 /* TodoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BCBE22108C0270061E059 /* TodoCell.swift */; };
 		819BCBEB2108C0280061E059 /* TodoTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BCBE32108C0270061E059 /* TodoTextCell.swift */; };
-		819BCBEC2108C0280061E059 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 819BCBE42108C0270061E059 /* Main.storyboard */; };
 		819BCBF0210B121A0061E059 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BCBEF210B121A0061E059 /* Project.swift */; };
 		819BCBF2210B121D0061E059 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 819BCBF1210B121D0061E059 /* Todo.swift */; };
 		81C30C93210886C100D18A17 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81C30C92210886C100D18A17 /* AppDelegate.swift */; };
@@ -28,11 +28,11 @@
 /* Begin PBXFileReference section */
 		6243B9B670C017CD37CB58B3 /* Pods_TaskTracker_IOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskTracker_IOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6275FB4464B80125EA691A06 /* Pods-TaskTracker-IOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskTracker-IOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaskTracker-IOS/Pods-TaskTracker-IOS.release.xcconfig"; sourceTree = "<group>"; };
+		8184D77F210BEB1400199607 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = "../../../../Downloads/TaskTracker-IOS-master/TaskTracker-IOS/Main.storyboard"; sourceTree = "<group>"; };
 		819BCBE02108C0270061E059 /* CreateTodoController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTodoController.swift; sourceTree = "<group>"; };
 		819BCBE12108C0270061E059 /* ProjectsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectsController.swift; sourceTree = "<group>"; };
 		819BCBE22108C0270061E059 /* TodoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoCell.swift; sourceTree = "<group>"; };
 		819BCBE32108C0270061E059 /* TodoTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodoTextCell.swift; sourceTree = "<group>"; };
-		819BCBE42108C0270061E059 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		819BCBEF210B121A0061E059 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		819BCBF1210B121D0061E059 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		81C30C8F210886C100D18A17 /* TaskTracker-IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskTracker-IOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -84,8 +84,8 @@
 				819BCBF1210B121D0061E059 /* Todo.swift */,
 				819BCBEF210B121A0061E059 /* Project.swift */,
 				819BCBE02108C0270061E059 /* CreateTodoController.swift */,
-				819BCBE42108C0270061E059 /* Main.storyboard */,
 				819BCBE12108C0270061E059 /* ProjectsController.swift */,
+				8184D77F210BEB1400199607 /* Main.storyboard */,
 				819BCBE22108C0270061E059 /* TodoCell.swift */,
 				819BCBE32108C0270061E059 /* TodoTextCell.swift */,
 				81C30CD82108995400D18A17 /* fonts */,
@@ -197,7 +197,7 @@
 				81C30CE02108995500D18A17 /* OpenSans-Regular.ttf in Resources */,
 				81C30CA921088FCE00D18A17 /* done.png in Resources */,
 				81C30CDE2108995500D18A17 /* OpenSans-Light.ttf in Resources */,
-				819BCBEC2108C0280061E059 /* Main.storyboard in Resources */,
+				8184D780210BEB1400199607 /* Main.storyboard in Resources */,
 				81C30C9A210886C600D18A17 /* Assets.xcassets in Resources */,
 				81C30CDF2108995500D18A17 /* OpenSans-Bold.ttf in Resources */,
 				81C30CDD2108995500D18A17 /* OpenSans-Semibold.ttf in Resources */,

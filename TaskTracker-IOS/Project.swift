@@ -22,6 +22,10 @@ class Project{
         self.todos = []
     }
     
+    func clearTodos(){
+        self.todos.removeAll()
+    }
+    
     init(){
         self.title = "Uknown"
         self.todos = []

@@ -27,14 +27,24 @@ class CreateTodoController: UITableViewController {
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.cancel){ (alertAction) in })
             self.present(alert, animated: true, completion: nil)
         }else{
+            if (myTableView.indexPathForSelectedRow?.row == nil) {
+                
+                let json:Parameters = [ "text":(myTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! TodoTextCell).todoTextField.text!,
+                                        "project_id": 1, "isCompleted": false]
+                Alamofire.request("https://radiant-island-23944.herokuapp.com/todo/create", method: .post, parameters: json, encoding: JSONEncoding.default)
+                delegate?.didFinishSwitch(switchState: true)
+                self.dismiss(animated: true, completion: nil)
+            } else {
+            
             let json:Parameters = [ "text":(myTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! TodoTextCell).todoTextField.text!,
-                                    "project_id": (myTableView.indexPathForSelectedRow?.row)!+1]
+                                    "project_id": (myTableView.indexPathForSelectedRow?.row)!+1, "isCompleted": false]
             Alamofire.request("https://radiant-island-23944.herokuapp.com/todo/create", method: .post, parameters: json, encoding: JSONEncoding.default)
             delegate?.didFinishSwitch(switchState: true)
             self.dismiss(animated: true, completion: nil)
+            }
         }
-        
-    }
+        }
+    
     @IBAction func pushBack(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
     }
