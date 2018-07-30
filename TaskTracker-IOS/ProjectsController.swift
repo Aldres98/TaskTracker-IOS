@@ -26,7 +26,7 @@ class ProjectsController: UITableViewController, SwitchDelegate{
     }
     
     override func viewWillAppear(_ animated: Bool) {
-
+            UpdateProjects()
     }
     
     
@@ -35,7 +35,6 @@ class ProjectsController: UITableViewController, SwitchDelegate{
             response in
             switch response.result{
             case .success:
-                self.projects.removeAll()
                 self.projects = []
                 let json = JSON(response.result.value!)
                 for (_,subJson):(String, JSON) in json {
@@ -46,6 +45,9 @@ class ProjectsController: UITableViewController, SwitchDelegate{
                     response in
                     switch response.result{
                     case .success:
+                        self.projects[0].clearTodos()
+                        self.projects[1].clearTodos()
+                        self.projects[2].clearTodos()
                         let json = JSON(response.result.value!)
                         for (_,subJson):(String, JSON) in json {
                             let project_id = (subJson["project_id"].int)! - 1
@@ -61,6 +63,7 @@ class ProjectsController: UITableViewController, SwitchDelegate{
             }
         })
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -114,7 +117,7 @@ class ProjectsController: UITableViewController, SwitchDelegate{
         
         if self.projects[indexPath.section].todos[indexPath.row].isCompleted == true{
             (cell.checkBox as! M13Checkbox).setCheckState(M13Checkbox.CheckState.checked, animated: false)
-        } else {
+        }else if self.projects[indexPath.section].todos[indexPath.row].isCompleted == false{
             (cell.checkBox as! M13Checkbox).setCheckState(M13Checkbox.CheckState.unchecked, animated: false)
         }
         
@@ -127,11 +130,11 @@ class ProjectsController: UITableViewController, SwitchDelegate{
         let cell = tableView.cellForRow(at: indexPath) as! TodoCell
         (cell.checkBox as! M13Checkbox).toggleCheckState()
         labelStrikeThrough(cell: cell);
+        self.projects[indexPath.section].todos[indexPath.row].isCompleted = !self.projects[indexPath.section].todos[indexPath.row].isCompleted
         
 
         Alamofire.request("https://radiant-island-23944.herokuapp.com/todo/" +
-            String(self.projects[indexPath.section].todos[indexPath.row].id), method: .put)
-        
+            String(self.projects[indexPath.section].todos[indexPath.row].id), method: .put)        
     }
     
     func labelStrikeThrough(cell: TodoCell){
@@ -145,7 +148,6 @@ class ProjectsController: UITableViewController, SwitchDelegate{
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        UpdateProjects()
         var projectNames:[String] = []
         for project in self.projects{ projectNames.append(project.title) };
         

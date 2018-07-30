@@ -37,7 +37,7 @@ class CreateTodoController: UITableViewController {
             } else {
             
             let json:Parameters = [ "text":(myTableView.cellForRow(at: IndexPath(row: 0, section: 0)) as! TodoTextCell).todoTextField.text!,
-                                    "project_id": (myTableView.indexPathForSelectedRow?.row)!+1, "isCompleted": false]
+                                    "project_id": (myTableView.indexPathForSelectedRow?.row)!+1]
             Alamofire.request("https://radiant-island-23944.herokuapp.com/todo/create", method: .post, parameters: json, encoding: JSONEncoding.default)
             delegate?.didFinishSwitch(switchState: true)
             self.dismiss(animated: true, completion: nil)
